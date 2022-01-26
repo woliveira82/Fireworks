@@ -8,7 +8,16 @@ onready var sound_1 = preload("res://assets/game_sfx_firework_explosion_002.wav"
 
 func _ready():
 	var sounds = [sound_0, sound_1]
+	var colors = [
+		Color(1.0, 0.0, 0.0, 1.0),
+		Color(0.0, 1.0, 0.0, 1.0),
+		Color(0.0, 0.0, 1.0, 1.0),
+		Color(1.0, 1.0, 0.0, 1.0),
+		Color(0.0, 1.0, 1.0, 1.0),
+		Color(1.0, 0.0, 1.0, 1.0)
+	]
 	particles.one_shot = true
+	particles.color_ramp.colors = [colors[randi() % 6], Color(1.0, 1.0, 1.0, 0.0)]
 	audio_player.stream = sounds[randi() % 2]
 	audio_player.play()
 

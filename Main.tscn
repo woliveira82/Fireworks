@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Explosion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
-
-[sub_resource type="GradientTexture" id=1]
 
 [sub_resource type="Environment" id=2]
 background_mode = 4
@@ -16,15 +13,5 @@ glow_blend_mode = 1
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 523, 266 )
-scale = Vector2( 1.41504, 799.25 )
-texture = SubResource( 1 )
-
-[node name="Explosion" parent="." instance=ExtResource( 1 )]
-position = Vector2( 519, 265 )
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
-
-[editable path="Explosion"]
